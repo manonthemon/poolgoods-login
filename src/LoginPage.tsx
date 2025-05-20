@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 
 interface loginProps {}
 
@@ -30,12 +32,12 @@ function LoginPage({}: loginProps) {
             >
               usuername
             </label>
-            <input
+            <Input
               type="text"
               id="username"
               className="p-2 rounded-full border border-gray-300 w-full"
               {...register("username", { required: "Username is required." })}
-            ></input>
+            ></Input>
             {errors.username && (
               <p className="text-red-500 text-sm mt-0.5">{errors.username.message as string}</p>
             )}
@@ -49,12 +51,12 @@ function LoginPage({}: loginProps) {
             >
               password
             </label>
-            <input
+            <Input
               type="password"
               id="password"
               className="p-2 rounded-full border border-gray-300 w-full"
                {...register("password", { required: "Password is required." })}
-            ></input>
+            ></Input>
               {errors.password && (
               <p className="text-red-500 text-sm mt-0.5">{errors.password.message as string}</p>
             )}
@@ -62,12 +64,12 @@ function LoginPage({}: loginProps) {
 
           {/* BUTTON */}
           <div className="flex justify-end">
-            <button
+            <Button
               type="submit"
               className="box-border px-4 py-1 bg-poolgoods-button-blue text-white rounded-full font-semibold shadow-xl hover:outline hover:outline-white hover:outline-solid hover:outline-1"
             >
               Login
-            </button>
+            </Button>
           </div>
 
         </form>

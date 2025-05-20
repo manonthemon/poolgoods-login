@@ -15,21 +15,20 @@
     "noEmit": true,
     "jsx": "react-jsx",
 
+    // Add these two lines for path aliases
+    "baseUrl": ".", // This tells TypeScript to resolve non-relative paths from the project root
+    "paths": {
+      "@/components/*": ["./src/components/*"], // Maps @/components to src/components
+      "@/lib/*": ["./src/lib/*"] // Maps @/lib to src/lib (for utils.ts)
+    },
+
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true,
-
-    
-    "baseUrl": ".", 
-    "paths": {
-      "@/components/*": ["./src/components/*"], 
-      "@/lib/*": ["./src/lib/*"]                 
-    }
-
+    "noUncheckedSideEffectImports": true
   },
   "include": ["src"]
 }

@@ -13,6 +13,9 @@
     "moduleDetection": "force",
     "noEmit": true,
 
+    // Add this line here
+    "types": ["node"], // <--- This tells TypeScript to include Node.js global types
+
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
