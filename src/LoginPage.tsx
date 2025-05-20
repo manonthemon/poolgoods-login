@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 interface loginProps {}
 
@@ -21,14 +21,12 @@ function LoginPage({}: loginProps) {
 
     <div className="flex justify-center items-center min-h-screen ">
       <div className="bg-gradient-to-r from-gradient-start to-gradient-end p-8 rounded-lg shadow-2xl bg-opacity-80 backdrop-blur-md max-w-xs w-full ">
-
-       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-2">
           {/* USERNAME       */}
           <div>
             <label
               htmlFor="username"
-              className="block mb-1 text-white font-semibold uppercase"
+              className="block mb-2 text-white font-semibold uppercase"
             >
               usuername
             </label>
@@ -38,17 +36,22 @@ function LoginPage({}: loginProps) {
               className="p-2 rounded-full border border-gray-300 w-full bg-white"
               {...register("username", { required: "Username is required." })}
             ></Input>
-            {errors.username && (
-                   <p className={`min-h-[1.25rem] text-red-500 text-sm mt-0.5 ${errors.username ? 'visible' : 'invisible'}`}>
-                {errors.username.message as string}</p>
-            )}
+         
+              <p
+                className={`mt-0.5 min-h-[1.25rem] text-red-500 text-sm ${
+                  errors.username ? "visible" : "invisible"
+                }`}
+              >
+                {errors.username?.message as string}
+              </p>
+          
           </div>
 
           {/* PASSWORD */}
           <div>
             <label
               htmlFor="password"
-              className="block mb-1 text-white font-semibold uppercase"
+              className="block mb-2 text-white font-semibold uppercase"
             >
               password
             </label>
@@ -56,18 +59,22 @@ function LoginPage({}: loginProps) {
               type="password"
               id="password"
               className="p-2 rounded-full border border-gray-300 w-full bg-white"
-               {...register("password", { required: "Password is required." })}
+              {...register("password", { required: "Password is required." })}
             ></Input>
-              {errors.password && (
-                   <p className={`min-h-[1.25rem] text-red-500 text-sm mt-0.5 ${errors.username ? 'visible' : 'invisible'}`}>
-                {errors.password.message as string}</p>
-            )}
+        
+              <p
+                className={`mt-0.5 min-h-[1.25rem] text-red-500 text-sm ${
+                  errors.password ? "visible" : "invisible"
+                }`}
+              >
+                {errors.password?.message as string}
+              </p>
+          
           </div>
 
           {/* BUTTON */}
           <div className="flex justify-end">
             <Button
-            
               type="submit"
               className="
       box-border px-4 py-1 
@@ -82,9 +89,7 @@ function LoginPage({}: loginProps) {
               Login
             </Button>
           </div>
-
         </form>
-        
       </div>
     </div>
   );
