@@ -8,8 +8,7 @@ function LoginPage({}: loginProps) {
     // MAIN WRAPPER
 
     <div className="flex justify-center items-center min-h-screen ">
-      <div className="bg-gradient-to-r from-gradient-start to-gradient-end p-8 rounded-lg shadow-2xl bg-opacity-80 backdrop-blur-md max-w-md w-full ">
-        
+      <div className="bg-gradient-to-r from-gradient-start to-gradient-end p-8 rounded-lg shadow-2xl bg-opacity-80 backdrop-blur-md max-w-xs w-full ">
   {/* USERNAME       */}
         <div className="mb-4">
           <label
