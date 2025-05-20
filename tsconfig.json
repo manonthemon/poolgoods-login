@@ -1,4 +1,11 @@
 {
+  "compilerOptions": { // <--- ADD THIS BLOCK
+    "baseUrl": ".",
+    "paths": {
+      "@/components/*": ["./src/components/*"],
+      "@/lib/*": ["./src/lib/*"]
+    }
+  }, // <--- END OF ADDED BLOCK
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },
